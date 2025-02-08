@@ -5,14 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const bubble = document.createElement("div");
         bubble.classList.add("bubble");
 
-        // Randomize position and size
-        const size = Math.random() * 40 + 10; // 10px to 50px
+        // Random size (10px to 50px)
+        const size = Math.random() * 40 + 10;
         bubble.style.width = `${size}px`;
         bubble.style.height = `${size}px`;
+
+        // Random horizontal position
         bubble.style.left = `${Math.random() * 100}vw`;
 
-        // Random animation duration
-        const duration = Math.random() * 5 + 5;
+        // Random animation duration (6s to 12s)
+        const duration = Math.random() * 6 + 6;
         bubble.style.animationDuration = `${duration}s`;
 
         bubbleContainer.appendChild(bubble);
@@ -24,5 +26,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Generate bubbles at intervals
-    setInterval(createBubble, 500);
+    setInterval(createBubble, 300);
 });
