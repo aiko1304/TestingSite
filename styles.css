@@ -7,7 +7,7 @@
     height: 100%;
     overflow: hidden;
     z-index: -1; /* Send behind content */
-    pointer-events: none; /* Prevent interaction */
+    pointer-events: none; /* Prevent interaction yes */
 }
 
 .bubble {
