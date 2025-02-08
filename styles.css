@@ -1,37 +1,89 @@
-/* Bubble Animation */
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #a8e6cf, #dcedc1);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents scrollbars */
+    position: relative;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to bottom, #66ccff, #3399ff);
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Content Section */
+.content {
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.5), 0px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Aero Button */
+.aero-button {
+    background: linear-gradient(to bottom, #ffcc00, #ff9900);
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    border-radius: 25px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.aero-button:hover {
+    background: linear-gradient(to bottom, #ff9900, #ff6600);
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* 🔵 Bubble Effect */
 .bubble-container {
-    position: fixed; /* Keep bubbles in place */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
     overflow: hidden;
-    z-index: -1; /* Send behind content */
-    pointer-events: none; /* Prevent interaction yes */
 }
 
 .bubble {
     position: absolute;
     bottom: -50px;
-    background: rgba(255, 255, 255, 0.3);
-    width: 20px;
-    height: 20px;
+    background: rgba(255, 255, 255, 0.4);
     border-radius: 50%;
     opacity: 0.6;
-    animation: rise 10s infinite ease-in-out;
+    filter: blur(2px);
+    animation: rise linear infinite;
 }
 
+/* Bubble Animation */
 @keyframes rise {
-    0% {
-        transform: translateY(0) scale(1);
+    from {
+        transform: translateY(0);
         opacity: 0.6;
     }
-    50% {
-        transform: translateY(-50vh) scale(1.2);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translateY(-100vh) scale(1);
+    to {
+        transform: translateY(-100vh);
         opacity: 0;
     }
 }
