@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const bubble = document.createElement("div");
         bubble.classList.add("bubble");
 
-        // Randomize bubble position and size
-        const size = Math.random() * 40 + 10; // Size between 10px and 50px
+        // Randomize position and size
+        const size = Math.random() * 40 + 10; // 10px to 50px
         bubble.style.width = `${size}px`;
         bubble.style.height = `${size}px`;
         bubble.style.left = `${Math.random() * 100}vw`;
